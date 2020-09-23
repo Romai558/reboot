@@ -1,17 +1,20 @@
-# Ecrire un algorithme qui demande un nombre de départ, et qui calcule sa factorielle.
+def method_name(params1)
+  params1
+end
+puts method_name(1)
 
 # NB : la factorielle de 8, notée 8 !, vaut
 # 1 x 2 x 3 x 4 x 5 x 6 x 7 x 8
 
-factorielle_number = 8
-i = 0
-array = []
+# factorielle_number = 8
+# i = 0
+# array = []
 
-while i < factorielle_number
-  i += 1
-  array << i
-end
-  p array[0]*array[1]*array[2]*array[3]*array[4]*array[5]*array[6]*array[7]
+# while i < factorielle_number
+#   i += 1
+#   array << i
+# end
+#   p array[0]*array[1]*array[2]*array[3]*array[4]*array[5]*array[6]*array[7]
 
 # --------------------------
 # Ecrire un algorithme qui demande un nombre de départ,
@@ -21,6 +24,16 @@ end
 # 1 + 2 + 3 + 4 + 5 = 15
 
 # NB : on souhaite afficher uniquement le résultat, pas la décomposition du calcul.
+
+# number_start = 5
+# init = 0
+# array = []
+
+# while init != number_start
+# array << init
+# init += 1
+# end
+# p array.sum
 
 # number_start = 5
 # i = 0
