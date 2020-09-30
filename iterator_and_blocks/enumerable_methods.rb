@@ -48,10 +48,14 @@ def concatenate(array)
   end
 end
 
+words = ["titi", "toto", "tata", "tutu", "tete", "tjtj"]
 def sorted_pairs(array)
+  array_words = []
   # TODO: Reorganize an array into slices of 2 elements, and sort each slice alphabetically.
   #       You should use of Enumerable#each_slice
   array.each_slice(2) do |word|
-  word.sort
+  array_words << word.sort
   end
+  array_words
 end
+p sorted_pairs(words)
