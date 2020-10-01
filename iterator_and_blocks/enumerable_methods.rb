@@ -2,7 +2,7 @@ def sum_odd_indexed(array)
 # TODO: computes the sum of elements at odd indexes (1, 3, 5, 7, etc.)
 # You should use Enumerable#each_with_index
   numbers_2 = []
-array.each_with_index do |number, index|
+  array.each_with_index do |number, index|
   numbers_2 << number if index.odd?
   end
   numbers_2.sum
