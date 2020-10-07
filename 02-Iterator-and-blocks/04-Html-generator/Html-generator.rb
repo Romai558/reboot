@@ -1,21 +1,29 @@
 def tag(tag_name, attributes = nil)
   # TODO: Build HTML tags around content given in the block
   #       The method can be called with an optional HTML attribute inputted as [attr_name, attr_value]
-  if block_given?
-    "<#{yield(tag_name)}>#{}</#{tag_name}>"
+  attr_name = if attributes.nil?
+    nil
   else
-    "<#{tag_name}></#{tag_name}>"
+  attributes.first
   end
+  attr_value = if attributes.nil?
+    nil
+  else
+  attributes.last
+  end
+  title = if block_given?
+    yield(tag_name)
+  else
+    "<h1>Google it</h1>"
+  end
+  html_content = "<#{tag_name} #{attr_name}='#{attr_value}'>#{title}</#{tag_name}>"
 end
+# => '<a href="www.google.com"><h1>Google it</h1></a>'
 
-content = tag("h1")
-
-content_2 = tag("h2")
-
-content_3 = tag("h3") do |
-  "#{x.upcase!}"
+html = tag("h1") do |title, second|
+  "<#{title}>Some Title</#{title}>"
 end
+p html
 
-p content
-p content_2
-p content_3
+www = tag("a", ["href", "www.google.com"])
+p www
