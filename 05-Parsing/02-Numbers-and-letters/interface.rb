@@ -1,26 +1,23 @@
-require 'open-uri'
-require 'json'
+require_relative "longest_word"
 
-def generate_grid(grid_size)
-  # TODO: generate random grid of letters
-  ('A'..'Z').to_a.sample(grid_size)
-end
+puts "******** Welcome to the longest word-game!********"
+puts "Here is your grid:"
+grid = generate_grid(9)
+puts grid.join(" ")
+puts "*****************************************************"
 
-def include?(?,attempt)
-  url = "https://wagon-dictionary.herokuapp.com/"
-  attempt = open(url).read
-  word = JSON.parse(attempt)
-end
+puts "What's your best shot?"
+start_time = Time.now
+attempt = gets.chomp
+end_time = Time.now
 
-def run_game(attempt, grid, start_time, end_time)
-  # TODO: runs the game and return detailed hash of result (with `:score`, `:message` and `:time` keys)
-# time taken to answer
-game = {
-  time: end_time - start_time,
-  score:
-  message:
-  "Well Done!"
-  "Wrong letter"
-  "Word doesn't exist"
-}
-end
+puts "******** Now your result ********"
+
+result = run_game(attempt, grid, start_time, end_time)
+
+puts "Your word: #{attempt}"
+puts "Time Taken to answer: #{result[:time]}"
+puts "Your score: #{result[:score]}"
+puts "Message: #{result[:message]}"
+
+puts "*****************************************************"
