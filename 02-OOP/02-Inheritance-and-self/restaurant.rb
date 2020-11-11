@@ -16,7 +16,7 @@ class Restaurant
 
   def print_reservations
     @clients.each_with_index do|client, index|
-      puts "Client #{index + 1} => #{client}"
+      puts "Client ##{index + 1} => #{client}"
     end
   end
 end
